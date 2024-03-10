@@ -47,11 +47,11 @@ pip install tensorboard
 
 ## Model Architecture
 
-![PointNet](/assests/img/pointnetjpg)
+![PointNet](/assets/img/pointnetjpg)
 
-![PointNN](/assests/img/pointnn01.jpg)
+![PointNN](/assets/img/pointnn01.jpg)
 
-![PointNN](/assests/img/pointnn02.jpg)
+![PointNN](/assets/img/pointnn02.jpg)
 
 
 ## Example Search Queries on Google Images
