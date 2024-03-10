@@ -51,8 +51,8 @@ pip install tensorboard
 
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="/assets/img/pointnn01.png" alt="NPE" width="300" style="margin-right: 10px;">
-    <img src="/assets/img/pointnn02.png" alt="PMB" width="300"/>
+    <img src="/assets/img/pointnn01.png" alt="NPE" width="400" style="margin-right: 10px;">
+    <img src="/assets/img/pointnn02.png" alt="PMB" width="400"/>
 
 </div>
 
