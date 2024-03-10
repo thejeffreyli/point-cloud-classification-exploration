@@ -10,64 +10,49 @@ Processing 3D point cloud data is important for applications in self-driving car
 
 ## Content
 
-- **create_dataset.py:** creates image datasets in your local directory
-    - Each type of sneaker model will have its own directory named after the SKU.
-    - Each image in the SKU directory will be numbered.
-    - The images are then divided into training and testing files. The default is 70:30 split.  
+- **papers:** contains the original papers that we base our project from
+    - [PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](./papers/PointNet.pdf)
+    - [Parameter is Not All You Need: Starting from Non-Parametric Networks for 3D Point Cloud Analysis](./papers/PointNN.pdf)
 
-- **dataloader.py:** creates a separate dataloader for the training or testing image datasets using the [torch.utils.data.DataLoader](https://pytorch.org/docs/stable/data.html) class
+- **pointnet:** contains relevant code for PointNet model
+    - data_loader.py: load point cloud data
+    - eval_cls.py: assess model accuracy on validation set
+    - models.py: implementation of PointNet in PyTorch, including variants
+    - utils.py: used for saving models during checkpoints
+    - train.py: training and validation loops 
+    - Visualize-PointNet-Results.ipynb: visualizing plots and results from robustness testing
 
-- **image-scraping-driver.py:** image-scraping Selenium driver for Google Images 
-    - You will need to download the correct [ChromeDriver](https://chromedriver.chromium.org/downloads) for your version of Google Chrome for this driver to work. 
-    - Resources/References:
-        - [Automating Google Chrome to Scrape Images with Selenium and Python](https://www.youtube.com/watch?v=7KhuEsq-I8o)
-        - [A Beginner’s Guide to Image Scraping with Python and Selenium](https://medium.com/@nithishreddy0627/a-beginners-guide-to-image-scraping-with-python-and-selenium-38ec419be5ff)
+- **pointnn:** contains relevant code for PointNN model
+    - fps.py: performs farthest point sampling on point cloud data
+    - knn.py: performs k-nearest neighbors classification on point cloud data
 
-- **model-training-assessment.ipynb:** contains training and validation loops and qualitative and quantiative assessments 
-
-- **model.py:** contains the architecture of CNN 
+- **report:** contains final report submission
 
 ## Program and System Requirements
 
-We developed this primarily on Google Colab, using Python, PyTorch, and CUDA GPU.
+We developed this primarily using Python, PyTorch, and CUDA GPU.
 
 Packages to Install:
 
 ```
-pip install torch
-pip install torchvision
-pip install pillow
 pip install matplotlib
 pip install numpy
-pip install pandas
-pip install seaborn
+pip install torch
+pip install argparse
+pip install torchsummary
+pip install torchviz
 pip install scikit-learn
-pip install tqdm
-pip install selenium
-pip install requests
-pip install opencv-python
+pip install tensorboard
 ```
 
 ## Model Architecture
 
-| Layer  | Operation                                 | Input Size          | Output Size         |
-|--------|-------------------------------------------|---------------------|---------------------|
-| Conv1  | Conv2d(3, 32, kernel_size=3, stride=1, pad=1)| (224, 224, 3)       | (224, 224, 32)      |
-| BN1    | BatchNorm2d(32)                            | (224, 224, 32)      | (224, 224, 32)      |
-| ReLU   | ReLU()                                     | (224, 224, 32)      | (224, 224, 32)      |
-| Pool1  | MaxPool2d(kernel_size=2, stride=2)         | (224, 224, 32)      | (112, 112, 32)      |
-| Conv2  | Conv2d(32, 64, kernel_size=3, stride=1, pad=1)| (112, 112, 32)     | (112, 112, 64)      |
-| BN2    | BatchNorm2d(64)                            | (112, 112, 64)      | (112, 112, 64)      |
-| ReLU   | ReLU()                                     | (112, 112, 64)      | (112, 112, 64)      |
-| Pool2  | MaxPool2d(kernel_size=2, stride=2)         | (112, 112, 64)      | (56, 56, 64)        |
-| Conv3  | Conv2d(64, 128, kernel_size=3, stride=1, pad=1)| (56, 56, 64)       | (56, 56, 128)       |
-| BN3    | BatchNorm2d(128)                           | (56, 56, 128)       | (56, 56, 128)       |
-| ReLU   | ReLU()                                     | (56, 56, 128)       | (56, 56, 128)       |
-| Pool3  | MaxPool2d(kernel_size=2, stride=2)         | (56, 56, 128)       | (28, 28, 128)       |
-| Flatten| Flatten()                                  | (28, 28, 128)       | 100352              |
-| FC1    | Linear(100352, 256)                       | 100352              | 256                 |
-| ReLU   | ReLU()                                     | 256                 | 256                 |
-| FC2    | Linear(256, 10)                           | 256                 | 10                  |
+![PointNet](/assests/img/pointnetjpg)
+
+![PointNN](/assests/img/pointnn01.jpg)
+
+![PointNN](/assests/img/pointnn02.jpg)
+
 
 ## Example Search Queries on Google Images
 
