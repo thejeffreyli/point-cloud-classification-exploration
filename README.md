@@ -49,9 +49,13 @@ pip install tensorboard
 
 ![PointNet](/assets/img/pointnet.jpg)
 
-<img src="/assets/img/pointnn01.png" alt="NPE" width="500"/>
+<div style="display: inline-block;">
+    <img src="/assets/img/pointnn01.png" alt="NPE" width="500"/>
+</div>
 
-<img src="/assets/img/pointnn01.png" alt="PMB" width="500"/>
+<div style="display: inline-block;">
+    <img src="/assets/img/pointnn01.png" alt="PMB" width="500"/>
+</div>
 
 
 ## Sample Point Clouds for Common Household Objects 
