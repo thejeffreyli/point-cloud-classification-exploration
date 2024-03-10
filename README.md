@@ -62,18 +62,12 @@ Non-Parametric Encoder (Left). Zhang et al. (2023) utilized trigonometric functi
 
 ## Sample Point Clouds for Common Household Objects 
 
-| Image| SKU | Model |
-|----------|----------|------------------------------|
-| ![Image 1](/assests/img/sample/555088-105.jpg) | 555088-105 | Jordan 1 Retro High Dark Mocha |
-| ![Image 2](/assests/img/sample/555088-126.jpg) | 555088-126 | Jordan 1 Retro High Light Smoke Grey |
-| ![Image 3](/assests/img/sample/555088-500.jpg) | 555088-500 | Jordan 1 Retro High Court Purple White |
-| ![Image 4](/assests/img/sample/555088-711.jpg) | 555088-711 | Jordan 1 Retro High OG Taxi
-| ![Image 5](/assests/img/sample/DC1788-100.jpg) | DC1788-100 | Jordan 1 Retro High CO.JP Midnight Navy (2020) |
-| ![Image 6](/assests/img/sample/DD9335-641.jpg) | DD9335-641 | Jordan 1 Retro High OG Atmosphere (Women's) |
-| ![Image 7](/assests/img/sample/DO7097-100.jpg) | DO7097-100 | Jordan 1 Retro High OG A Ma Maniére |
-| ![Image 8](/assests/img/sample/DZ5485-031.jpg) | DZ5485-031 | Jordan 1 Retro High OG Lucky Green |
-| ![Image 9](/assests/img/sample/DZ5485-400.jpg) | DZ5485-400 | Jordan 1 Retro High OG UNC Toe |
-| ![Image 10](/assests/img/sample/DZ5485-612.jpg) | DZ5485-612 | Jordan 1 Retro High OG Chicago Lost and Found |
+![chairs](/assets/img/chairs.png)
+
+![lamps](/assets/img/lamps.png)
+
+![vases](/assets/img/vases.png)
+
 
 ## Results
 
