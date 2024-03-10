@@ -8,6 +8,15 @@ Last Updated: December 16, 2023
 
 Processing 3D point cloud data is important for applications in self-driving cars, robotics, and virtual and augmented reality. Qi et al. (2017) introduced the PointNet architecture which performs classification tasks after being trained on point cloud data. The group based their design decisions on three properties of point clouds, namely permutation invariance, transformation invariance, and interactions among points. On the other hand, Zhang et al. (2023) offers a newer non-parametric approach in solving the same problem. Non-parametric building blocks are stacked across multiple stages to construct a pyramid hierarchy. We will be exploring and evaluating both models. Firstly, we focused on implementing both networks and testing them on a smaller point cloud dataset based off ModelNet40. Secondly, we performed a series of tests on robustness on PointNet, as we augment the data during inference. Lastly, we will visually assess the internal encodings of the multistep hierarchical layers inside the non-parametric encoder of the Point-NN to understand how it captures spatial representations for classification tasks.
 
+## Sample Point Clouds for Common Household Objects 
+
+![chairs](/assets/img/chairs.png)
+
+![lamps](/assets/img/lamps.png)
+
+![vases](/assets/img/vases.png)
+
+
 ## Content
 
 - **papers:** contains the original papers that we base our project from
@@ -60,35 +69,34 @@ The classification network takes n points as input, applies input and feature tr
 
 Non-Parametric Encoder (Left). Zhang et al. (2023) utilized trigonometric functions to encode raw Point Clouds points into high-dimensional vectors in PosE. The vectors then pass through a series of hierarchical non-parametric operations, namely FPS, k-NN, local geometric aggregation, and pooling, where they will be encoded into a global feature $f_G$. Point-Memory Bank (Right). The training set features are passed through the Point-Memory Bank outputting $F_{mem}$, which is later used to classify using similarity matching.
 
-## Sample Point Clouds for Common Household Objects 
-
-![chairs](/assets/img/chairs.png)
-
-![lamps](/assets/img/lamps.png)
-
-![vases](/assets/img/vases.png)
-
 
 ## Results
 
-![augmentation](/assests/img/augmentation.png)
+### Accuracy and Loss Curves
 
-Training image samples following augmentation.
+![acc_curve](/assests/img/pointnetplotacc250.png)
 
-![acc_curve](/assests/img/acc_curve.png)
+![loss_curve](/assests/img/pointnetplotloss250.png)
 
-![loss_curve](/assests/img/loss_curve.png)
+PointNet Training and testing curves over 250 epochs.
 
-Validation accuracy curves for three experiments:
-- Experiment 1 (67.4%): only RELU activation and MaxPool layer following convolutional layer
-- Experiment 2 (78.1%): introduced Batch Normalization prior to each RELU activation layer
-- Experiment 3 (86.0%): introduced data augmentation techniques for training set, namely Normalization, RandomRotation, and RandomHorizontalFlip 
+### Robustness Testing for Best PointNet Model
 
-Validation loss curves for three experiments:
-- Experiment 1 (1.26)
-- Experiment 2 (0.750)
-- Experiment 3 (0.585)
+| Number of Samples | Accuracy | Degree of Rotation | Accuracy |
+|-------------------|----------|---------------------|----------|
+| 10000             | 98.3%    | 0°                  | 98.3%    |
+| 7500              | 98.3%    | 5°                  | 98.1%    |
+| 5000              | 98.3%    | 30°                 | 73.6%    |
+| 2500              | 98.1%    | 45°                 | 43.2%    |
+| 1000              | 97.5%    | 90°                 | 25.3%    |
+| 500               | 97.0%    |                     |          |
+| 100               | 94.6%    |                     |          |
 
-![augmentation](/assests/img/confusion_matrix.png)
 
-Confusion Matrix of classification results on validation set.
+### Visualization of Point Cloud Data Encoding by FPS
+
+![fps](/assests/img/fps.png)
+
+### Visualization of Point Cloud Data Encoding by k-NN
+
+![knn](/assests/img/knn.png)
