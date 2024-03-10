@@ -47,25 +47,14 @@ pip install tensorboard
 
 ## Model Architecture
 
-![PointNet](/assets/img/pointnetjpg)
+![PointNet](/assets/img/pointnet.jpg)
 
-![PointNN](/assets/img/pointnn01.jpg)
+![PointNN](/assets/img/pointnn01.png)
 
-![PointNN](/assets/img/pointnn02.jpg)
+![PointNN](/assets/img/pointnn02.png)
 
 
-## Example Search Queries on Google Images
-
-- Query Example #1: 
-    - Jordan 1 Retro High OG Chicago Lost and Found 
-    - DZ5485-612
-    - Air Jordan 1 Lost and Found Ebay
-- Query Example #2: 
-    - Jordan 1 Retro High Dark Mocha
-    - 555088-105
-    - Air Jordan 1 Dark Mocha Ebay
-
-## Sample Images 
+## Sample Point Clouds for Common Household Objects 
 
 | Image| SKU | Model |
 |----------|----------|------------------------------|
