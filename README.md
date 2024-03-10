@@ -1,5 +1,7 @@
 # Exploration and Assessment of Parametric and Non-Parametric Networks for 3D Point Cloud Classification
 
+Alternative Title: Classifying 3D Common Household Objects Using Deep Learning Approaches 
+
 By Jeffrey Li and Ning-Yuan Li
 
 Last Updated: December 16, 2023
@@ -53,6 +55,8 @@ pip install torchviz
 pip install scikit-learn
 pip install tensorboard
 ```
+
+Data and source of inspiration for project available [here](https://github.com/learning3d/assignment5/tree/main).
 
 ## PointNet Architecture
 
@@ -118,3 +122,10 @@ Sample point clouds undergoing four FPS iterations (left to right): 10000 points
 ![knn](/assets/img/knn.png) 
 
 Sample point clouds in the nth stage of the multistage hierarchy undergoing FPS and k-NN with k = 90 (from left to right): the point cloud before FPS, the point cloud after FPS, and k-NN where red indicates the nearest neighbors (cluster) of a selected point in the cloud (after FPS).
+
+
+## Conclusion
+
+Point cloud processing is important in several fields. In this project, we examined and assessed two different methods for classifying point clouds on a point cloud dataset. The PointNet architecture provides a way to learn global and local point features while also achieving permutation invariance, whereas the Point-NN network offers a way to capture features, like spatial patterns and structures, through a non-parametric approach. Through our experiments, we built and implemented both networks to understand the different mechanisms that allow them to perform classification tasks. Though PointNet achieves higher accuracy when evaluated on the test dataset, we acknowledge the ability for Point-NN to achieve reasonable accuracy with no training and substantially less computational resources. Additionally, we performed robustness tests, specifically data corruption and rotations, in order to evaluate PointNet's ability to classify objects despite changes to orientation and structure. From our tests, we found that PointNet is capable of recognizing global structures of objects despite missing points, but it suffers when large rotations are applied to the point clouds. Lastly, we visually analyzed the internal representations of the multistep hierarchical layers inside the non-parametric encoder to understand how Point-NN captures meaningful representations in point cloud data. 
+
+We have several directions in which we can expand upon our existing work. Firstly, there are several relevant and more advanced architecture capable of processing point cloud data, while also performing other vision tasks, such as segmentation and object detection, that we can further explore. PointNet is a stepping stone to more exciting networks, such as PointNet++, DGCNN, and Point Transformers, in which several changes and design decisions have been made to account for the drawbacks of the original PointNet. Secondly, Point-NN's utility can be expanded upon as a plug-and-play module to boost existing learnable 3D models without further training. Applying Point-NN's ability to capture spatial representations will enhance the shortcomings to baseline models such as PointNet. Thirdly, acquiring access to greater computing resources will allow us to build upon our existing work through being able to keep and run the Transformation-Network as well as the full ModelNet40 point cloud dataset. 
