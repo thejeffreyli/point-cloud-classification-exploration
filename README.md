@@ -70,6 +70,20 @@ The classification network takes n points as input, applies input and feature tr
 Non-Parametric Encoder (Left). Zhang et al. (2023) utilized trigonometric functions to encode raw Point Clouds points into high-dimensional vectors in PosE. The vectors then pass through a series of hierarchical non-parametric operations, namely FPS, k-NN, local geometric aggregation, and pooling, where they will be encoded into a global feature $f_G$. Point-Memory Bank (Right). The training set features are passed through the Point-Memory Bank outputting $F_{mem}$, which is later used to classify using similarity matching.
 
 
+## PointNet Robustness Testing: Rotation
+
+![rotation](/assets/img/pointcloud-rotation.png)
+
+
+Sample point cloud demonstrating a chair undergoing rotations (left to right): 0 degrees, 5 degrees, 30 degrees, 45 degrees, 90 degrees. The model incorrectly classifies the chair starting at the 30 degrees rotation. 
+
+## PointNet Robustness Testing: Data Corruption
+
+![corruption](/assets/img/pointcloud-sampling.png)
+
+Sample point cloud demonstrating a chair undergoing sampling (left to right): 10000 points, 7500 points, 5000 points, 2500 points, 1000 points, 500 points, 100 points. The model correctly classifies the chair at all different samplings.
+
+
 ## Results
 
 ### Accuracy and Loss Curves
@@ -93,10 +107,14 @@ PointNet Training and testing curves over 250 epochs.
 | 100               | 94.6%    |                     |          |
 
 
-### Visualization of Point Cloud Data Encoding by FPS
+### Visualization of Point Cloud Data Encoding by PointNN FPS
 
 ![fps](/assets/img/fps.png)
 
-### Visualization of Point Cloud Data Encoding by k-NN
+Sample point clouds undergoing four FPS iterations (left to right): 10000 points, 5000 points, 2500 points, 1250 points, 625 points.
 
-![knn](/assets/img/knn.png)
+### Visualization of Point Cloud Data Encoding by PointNN k-NN
+
+![knn](/assets/img/knn.png) 
+
+Sample point clouds in the nth stage of the multistage hierarchy undergoing FPS and k-NN with k = 90 (from left to right): the point cloud before FPS, the point cloud after FPS, and k-NN where red indicates the nearest neighbors (cluster) of a selected point in the cloud (after FPS).
