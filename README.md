@@ -74,9 +74,9 @@ Non-Parametric Encoder (Left). Zhang et al. (2023) utilized trigonometric functi
 
 ### Accuracy and Loss Curves
 
-![acc_curve](/assests/img/pointnetplotacc250.png)
+![acc_curve](/assets/img/pointnetplotacc250.png)
 
-![loss_curve](/assests/img/pointnetplotloss250.png)
+![loss_curve](/assets/img/pointnetplotloss250.png)
 
 PointNet Training and testing curves over 250 epochs.
 
@@ -95,8 +95,8 @@ PointNet Training and testing curves over 250 epochs.
 
 ### Visualization of Point Cloud Data Encoding by FPS
 
-![fps](/assests/img/fps.png)
+![fps](/assets/img/fps.png)
 
 ### Visualization of Point Cloud Data Encoding by k-NN
 
-![knn](/assests/img/knn.png)
+![knn](/assets/img/knn.png)
